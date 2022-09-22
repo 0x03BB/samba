@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  samba:
+    build: ./build
+    image: ${DOCKER_REGISTRY}samba:${DOCKER_TAG:-latest}
+    restart: unless-stopped
+    environment:
+      WORKGROUP: "${WORKGROUP}"
+      USERS: "${USERS}"
+    ports:
+      - "445:445"
+    volumes:
+      - "samba-data:/samba"
+
+volumes:
+  samba-data:
+    name: "${VOLUME:?VOLUME must be set}"
