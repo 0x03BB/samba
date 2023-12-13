@@ -15,4 +15,4 @@ services:
 
 volumes:
   samba-data:
-    name: "${VOLUME:?VOLUME must be set}"
+    name: "${VOLUME:?}"
