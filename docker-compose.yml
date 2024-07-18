@@ -1,8 +1,5 @@
-version: '3.8'
-
 services:
   samba:
-    build: ./build
     image: ${DOCKER_REGISTRY}samba:${DOCKER_TAG:-latest}
     restart: unless-stopped
     environment:

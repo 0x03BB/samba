@@ -1,0 +1,4 @@
+services:
+  samba:
+    build: ../build
+    image: ${DOCKER_REGISTRY}samba:${DOCKER_TAG:-latest}
